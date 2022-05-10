@@ -2,11 +2,15 @@
 
 This project demonstrates a turn-based NFT game with famous art works.
 
+
 ## Game Objective
 
 Do you know the famous art painting called "The Scream" created by Edvard Munch? 
 
-![The Scream](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/387px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg)
+<!-- ![The Scream](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/387px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg) -->
+<p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/387px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg" width="300" >
+</p>
 
 So your objective is to FIGHT against this MONSTER with your chosen HERO.
 
@@ -22,22 +26,34 @@ There are :
 1) Click on one of your favorite painting to fight against "The Scream".
 
 <!-- ![choosing a hero](./imgs/choose_hero.png) -->
+<p align="center">
 <img src="./imgs/choose_hero.png" width="300" >
+</p>
 
 2) Choose your wallet on Rinkeby and confirm the minting transaction. 
 
 <!-- ![minting transacstion](./imgs/minting_transaction_metamask.png) -->
+<p align="center">
 <img src="./imgs/minting_transaction_metamask.png" width="300" >
+</p>
 
 3) Once your HERO painting is minted to your wallet address, now you can click on "Attack The Scream" to fight againt the monster! You can see that the monster has more HP than you! Once again, the metamask window will pop up and you need to confirm the transaction!
 
 <!-- ![arena](./imgs/arena.png) -->
+<p align="center">
 <img src="./imgs/arena.png" width="300" >
+</p>
 
 4) Ohh.... SAD... seems like you need to team up with others to defeat this monster. It has more damage and hp than you! 
 
 <!-- ![after attack](./imgs/arena_after_attack.png) -->
-<img src="./imgs/arena_after_attack.png" width="300" >
+<p align="center">
+    <img src="./imgs/arena_after_attack.png" width="300">
+</p>
 
 ---
-YEAH! That's all for the brief introduction of NFT Art Game Demo! Feel free to take a look on contract `ArtNFTGame.sol` and if you have question please send me a msg to `wonderkidd2022@gmail.com`
+YEAH! That's all for the brief introduction of NFT Art Game Demo! 
+
+Feel free to take a look on contract `ArtNFTGame.sol` and if you have question please send me a msg to `wonderkidd2022@gmail.com`.
+
+BYE!👋 
