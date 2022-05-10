@@ -21,18 +21,23 @@ There are :
 
 1) Click on one of your favorite painting to fight against "The Scream".
 
-![choosing a hero](./imgs/choose_hero.png)
+<!-- ![choosing a hero](./imgs/choose_hero.png) -->
+<img src="./imgs/choose_hero.png" width="300" >
 
 2) Choose your wallet on Rinkeby and confirm the minting transaction. 
 
-![minting transacstion](./imgs/minting_transaction_metamask.png)
+<!-- ![minting transacstion](./imgs/minting_transaction_metamask.png) -->
+<img src="./imgs/minting_transaction_metamask.png" width="300" >
 
 3) Once your HERO painting is minted to your wallet address, now you can click on "Attack The Scream" to fight againt the monster! You can see that the monster has more HP than you! Once again, the metamask window will pop up and you need to confirm the transaction!
 
-![arena](./imgs/arena.png)
+<!-- ![arena](./imgs/arena.png) -->
+<img src="./imgs/arena.png" width="300" >
 
-4) Ohh.... SAD... seems like you need to team up with others to defeat this monster. It has more damage and hp than you!
+4) Ohh.... SAD... seems like you need to team up with others to defeat this monster. It has more damage and hp than you! 
 
-![after attack](./imgs/arena_after_attack.png)
+<!-- ![after attack](./imgs/arena_after_attack.png) -->
+<img src="./imgs/arena_after_attack.png" width="300" >
 
-
+---
+YEAH! That's all for the brief introduction of NFT Art Game Demo! Feel free to take a look on contract `ArtNFTGame.sol` and if you have question please send me a msg to `wonderkidd2022@gmail.com`
