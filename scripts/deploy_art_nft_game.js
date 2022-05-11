@@ -10,10 +10,11 @@ const main = async () => {
         "The Scream", // Boss name
         "Qmf1Pdp2wKzY1jogYfSa2NejXerSNM6U7ZxWqkuA1PzL4a", // Boss image
         500, // Boss hp
-        50 // Boss attack damage
+        50, // Boss attack damage
+        40 // Player critical attack chance percentage
       );    
 
-  
+          
     await gameContract.deployed();
     console.log("Contract deployed to:", gameContract.address);
   

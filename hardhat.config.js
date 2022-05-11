@@ -27,6 +27,7 @@ module.exports = {
     rinkeby: {
       url: process.env.STAGING_ALCHEMY_KEY,
       accounts: [process.env.PRIVATE_KEY],
+      // gasPrice: 30000000
     },
     mainnet: {
       chainId: 1,

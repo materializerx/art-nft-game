@@ -33,13 +33,19 @@ contract ArtNFTGame is ERC721 {
     Counters.Counter private _tokenIds;
 
     CharacterAttributes[] defaultCharacters;
+    
+    // Seed to help generate a random number 
+    uint256 private seed;
+    // How many percent of chance to land a critical attack
+    uint256 private playerCriticalAttackChance;
 
+    // Mapping from the nft's tokenId => characters attributes.
     mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
+    // Mapping from an address => the NFTs tokenId.
     mapping(address => uint256) public nftHolders;
 
     event CharacterNFTMinted(address sender, uint256 tokenId, uint256 characterIndex);
     event AttackComplete(address sender, uint newBossHp, uint newPlayerHp);
-
 
     constructor(
         string[] memory characterNames,
@@ -49,10 +55,16 @@ contract ArtNFTGame is ERC721 {
         string memory bossName,
         string memory bossImageURI,
         uint bossHp,
-        uint bossAttackDamage
+        uint bossAttackDamage,
+        uint criticalAttackChance
     )
         ERC721("Arts", "ART")
     {
+        // Set the initial seed
+        seed = (block.timestamp + block.difficulty) % 100;
+        // Set player's critical attack chance percentage
+        playerCriticalAttackChance = criticalAttackChance;
+
         bigBoss = BigBoss({
             name: bossName,
             imageURI: bossImageURI,
@@ -136,15 +148,25 @@ contract ArtNFTGame is ERC721 {
         CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
         console.log("\nPlayer w/ character %s about to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
         console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
+        
+        // Generate a new seed for the next attack 
+        seed = (block.difficulty + block.timestamp + seed) % 100;
+        console.log("Random # generated: %d", seed);
+
+        uint256 newPlayerAttackDamage = player.attackDamage;
+        // Give to the player a chance to land a critical attack on Boss
+        if (seed <= playerCriticalAttackChance) {
+            newPlayerAttackDamage *= 2;
+        }
         // Make sure the player has more than 0 HP.
         require(player.hp > 0, "Error: character must have HP to attack boss.");
         // Make sure the boss has more than 0 HP.
         require(bigBoss.hp > 0, "Error: boss must have HP to attack boss.");
         // Allow player to attack boss.
-        if (bigBoss.hp < player.attackDamage) {
+        if (bigBoss.hp < newPlayerAttackDamage) {
             bigBoss.hp = 0;
         } else {
-            bigBoss.hp = bigBoss.hp - player.attackDamage;
+            bigBoss.hp = bigBoss.hp - newPlayerAttackDamage;
         }
         // Allow boss to attack player.
         if (player.hp < bigBoss.attackDamage) {
@@ -152,7 +174,7 @@ contract ArtNFTGame is ERC721 {
         } else {
             player.hp = player.hp - bigBoss.attackDamage;
         }
-        // Console for ease.
+        
         console.log("Player attacked boss. New boss hp: %s", bigBoss.hp);
         console.log("Boss attacked player. New player hp: %s\n", player.hp);
         
